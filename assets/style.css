@@ -180,3 +180,32 @@ main.hero {
         font-size: 1rem;
     }
 }
+
+/* === Mobile / small screen tweaks === */
+@media (max-width: 800px) {
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .tagline {
+        font-size: 1rem;
+    }
+
+    /* Scale down the hero button */
+    .hero-button {
+        font-size: 1.5rem;      /* smaller text */
+        padding: 0.5rem 1rem;   /* smaller padding */
+        border-radius: 20px;    /* slightly smaller rounding */
+    }
+
+    /* Optional: scale icon proportionally */
+    .button-icon {
+        height: 1em; /* scales with new button font-size */
+        padding-right: 0.5rem;
+        top: 2px;    /* adjust vertical alignment */
+    }
+}
