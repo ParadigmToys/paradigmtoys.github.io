@@ -168,17 +168,17 @@ main.hero {
     opacity: 0.75;
 }
 
-/* === Responsive tweaks === */
-@media (max-width: 800px) {
-    .hero-content {
-        padding: 1rem;
-    }
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .hero .tagline {
-        font-size: 1rem;
-    }
+    /* Accessibility: hide text visually but keep it readable by screen readers */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* prevent line breaks */
+    border: 0;
 }
 
 /* === Mobile / small screen tweaks === */
