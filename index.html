@@ -2,34 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Paradigm Toys – Premium Skill Toys & Precision Machined Fidgets</title>
-  <meta name="description" content="Paradigm Toys is an independent brand creating premium skill toys, precision-machined fidgets, and puzzles with a focus on design and user experience." />
+  <title>Paradigm Toys – Skill Toys. Puzzles. Fidgets.</title>
+
+  <meta name="description" content="Paradigm Toys offers high-quality skill toys, fidgets, and puzzles for enthusiasts seeking durable, well-crafted tactile toys." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <main>
-    <h1>Paradigm Toys</h1>
 
-    <p>
-      Paradigm Toys is an independent toy brand focused on premium skill toys,
-      precision-machined fidgets, and thoughtfully designed puzzles.
-      Our products emphasize durability, balance, and long-term use.
-    </p>
+<header class="top-bar">
+  <div class="scroll-container">
+    <div class="scroll-track">
+      <span>
+        PARADIGM TOYS • SKILL TOYS • FIDGETS • PUZZLES • 
+        PARADIGM TOYS • SKILL TOYS • FIDGETS • PUZZLES • 
+        PARADIGM TOYS • SKILL TOYS • FIDGETS • PUZZLES • 
+        PARADIGM TOYS • SKILL TOYS • FIDGETS • PUZZLES • 
+        PARADIGM TOYS • SKILL TOYS • FIDGETS • PUZZLES • 
+        PARADIGM TOYS • SKILL TOYS • FIDGETS • PUZZLES • 
+      </span>
+        <span>
+        PARADIGM TOYS • SKILL TOYS • FIDGETS • PUZZLES • 
+        PARADIGM TOYS • SKILL TOYS • FIDGETS • PUZZLES • 
+        PARADIGM TOYS • SKILL TOYS • FIDGETS • PUZZLES • 
+        PARADIGM TOYS • SKILL TOYS • FIDGETS • PUZZLES • 
+        PARADIGM TOYS • SKILL TOYS • FIDGETS • PUZZLES • 
+        PARADIGM TOYS • SKILL TOYS • FIDGETS • PUZZLES • 
+      </span>
+    </div>
+  </div>
+</header>
 
-    <h2>What We Make</h2>
-    <ul>
-      <li>Machined skill toys (including begleri)</li>
-      <li>EDC fidget toys</li>
-      <li>Mechanical and tactile puzzles</li>
-    </ul>
+<main class="hero">
+  <div class="hero-content">
+    <img src="assets/logo/Color Logo Subtext.png" alt="Paradigm Toys Logo" class="hero-logo">
+    
+    <!-- Minimal button below the logo -->
+    <a href="https://etsy.com/shop/ParadigmToys" class="hero-button">
+      <img
+      src="assets/icons/shop.svg"
+      alt=""
+      class="button-icon"
+      aria-hidden="true"
+      >
+      <span>Shop Now</span>
+    </a>
+  </div>
+</main>
 
-    <p>
-      Designed with intention. Built to last.
-    </p>
+  <footer class="site-footer">
+    © <span id="year"></span> Paradigm Toys
+  
+      <img
+      src="assets/logo/Flat Logo Reduced.png"
+      alt="Paradigm Toys"
+      class="footer-logo"
+    >
+  </footer>
 
-    <p>
-      Contact: <a href="mailto:hello@paradigmtoys.com">hello@paradigmtoys.com</a>
-    </p>
-  </main>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

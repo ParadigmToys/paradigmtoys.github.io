@@ -1,0 +1,182 @@
+
+/* Cooper Black for Logo / H1 */
+@font-face {
+    font-family: "Cooper Black";
+    src: url("../fonts/CooperBlack.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Arial Rounded for everything else */
+@font-face {
+    font-family: "Arial Rounded";
+    src: url("../fonts/ArialRounded.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* === Global Styles === */
+:root {
+    --bg: #ffffff;
+    --fg: #0f0f10;
+    --muted: #9a9a9a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* === Body + Layout === */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Arial Rounded", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+}
+
+/* Main content grows to fill space */
+main {
+    flex: 1 0 auto; /* grow to push footer down */
+}
+
+/* === Top Bar === */
+.top-bar {
+    background-color: #EE3C6F;
+    color: white;
+    padding: 0.75rem 0rem;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: .25rem solid #ff6f98;
+}
+
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.scroll-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 50s linear infinite;
+}
+
+.scroll-track span {
+    white-space: nowrap;
+    font-family: "Arial Rounded", Arial, sans-serif;
+    font-size: 1rem;
+}
+
+/* Seamless loop */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* === Hero Section === */
+main.hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 1280px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* center horizontally */
+    justify-content: center;
+}
+
+.hero-logo {
+    max-width: 100%;        /* never overflow container */
+    max-height: 400px;      /* sets desired height */
+    width: auto;            /* maintain aspect ratio */
+    height: auto;           /* maintain aspect ratio */
+    margin-bottom: 5rem;
+}
+
+/* Minimal button style */
+.hero-button {
+    display: inline-flex;
+    padding: 0.75rem 1.5rem;  /* vertical + horizontal padding */
+    font-family: "Arial Rounded", Arial, sans-serif;
+    font-size: 3.5rem;
+    color: #ffffff;
+    background-color: #EE3C6F; /* matches top bar */
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;      /* remove underline from <a> */
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #0ec055;  /* slightly darker on hover */
+}
+
+/* Icon sizing */
+.button-icon {
+    height: 1em;     /* scales with text */
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+    padding-right: 1rem;
+
+    position: relative;
+    top: 4px
+}
+
+.site-footer {
+    position: relative;
+    text-align: center;
+    background-color: #272727;
+    color: var(--muted);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-top: 0.25rem solid #555555;
+}
+
+/* Center the text perfectly */
+.footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* Logo locked to the right */
+.footer-logo {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 24px;
+    opacity: 0.75;
+}
+
+/* === Responsive tweaks === */
+@media (max-width: 800px) {
+    .hero-content {
+        padding: 1rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero .tagline {
+        font-size: 1rem;
+    }
+}
