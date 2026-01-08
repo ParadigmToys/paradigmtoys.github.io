@@ -64,7 +64,7 @@ main {
 .scroll-track {
     display: flex;
     width: max-content;
-    animation: scroll 50s linear infinite;
+    animation: scroll 45s linear infinite;
 }
 
 .scroll-track span {
