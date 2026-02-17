@@ -2,16 +2,24 @@
 /* Cooper Black for Logo / H1 */
 @font-face {
     font-family: "Cooper Black";
-    src: url("../fonts/CooperBlack.woff") format("woff");
-    font-weight: normal;
+    src: url("../assets/fonts/CooperBlack.woff") format("woff");
+    font-weight: Black;
     font-style: normal;
 }
 
 /* Arial Rounded for everything else */
 @font-face {
     font-family: "Arial Rounded";
-    src: url("../fonts/ArialRounded.woff") format("woff");
+    src: url("../assets/fonts/ArialRounded.woff") format("woff");
     font-weight: normal;
+    font-style: normal;
+}
+
+/* Arial Rounded for everything else */
+@font-face {
+    font-family: "Arial Rounded Bold";
+    src: url("../assets/fonts/ArialRoundedBold.woff") format("woff");
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -20,6 +28,8 @@
     --bg: #ffffff;
     --fg: #0f0f10;
     --muted: #9a9a9a;
+
+    --pdpink: #EE3C6F;
 }
 
 * {
@@ -48,7 +58,7 @@ main {
 
 /* === Top Bar === */
 .top-bar {
-    background-color: #EE3C6F;
+    background-color: var(--pdpink);
     color: white;
     padding: 0.75rem 0rem;
     overflow: hidden;
@@ -69,8 +79,8 @@ main {
 
 .scroll-track span {
     white-space: nowrap;
-    font-family: "Arial Rounded", Arial, sans-serif;
-    font-size: 1rem;
+    font-family: "Arial Rounded Bold", Arial, sans-serif;
+    font-size: 1.5rem;
 }
 
 /* Seamless loop */
@@ -117,7 +127,7 @@ main.hero {
     font-family: "Arial Rounded", Arial, sans-serif;
     font-size: 3.5rem;
     color: #ffffff;
-    background-color: #EE3C6F; /* matches top bar */
+    background-color: var(--pdpink);
     border: none;
     border-radius: 25px;
     text-decoration: none;      /* remove underline from <a> */
@@ -199,7 +209,7 @@ main.hero {
     .hero-button {
         font-size: 1.5rem;      /* smaller text */
         padding: 0.5rem 1rem;   /* smaller padding */
-        border-radius: 20px;    /* slightly smaller rounding */
+        border-radius: 10px;    /* slightly smaller rounding */
     }
 
     /* Optional: scale icon proportionally */
