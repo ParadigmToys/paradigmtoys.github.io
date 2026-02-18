@@ -1,43 +1,45 @@
-/* === Fonts === */
+
+/* Cooper Black for Logo / H1 */
 @font-face {
     font-family: "Cooper Black";
     src: url("../assets/fonts/CooperBlack.woff") format("woff");
-    font-weight: 900;
+    font-weight: Black;
     font-style: normal;
 }
 
+/* Arial Rounded for everything else */
 @font-face {
     font-family: "Arial Rounded";
     src: url("../assets/fonts/ArialRounded.woff") format("woff");
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
 }
 
+/* Arial Rounded for everything else */
 @font-face {
     font-family: "Arial Rounded Bold";
     src: url("../assets/fonts/ArialRoundedBold.woff") format("woff");
-    font-weight: 700;
+    font-weight: bold;
     font-style: normal;
 }
 
-/* === Variables === */
+/* === Global Styles === */
 :root {
     --bg: #ffffff;
-    --fg: #272727;
+    --fg: #0f0f10;
     --muted: #9a9a9a;
-    --pdpink: #EF3E6E;
-    --circuit-green: #22D66B;
+
+    --pdpink: #EE3C6F;
 }
 
-/* === Global Reset === */
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
+/* === Body + Layout === */
 html, body {
     height: 100%;
+    margin: 0;
 }
 
 body {
@@ -49,19 +51,19 @@ body {
     color: var(--fg);
 }
 
+/* Main content grows to fill space */
 main {
-    flex: 1 0 auto;
+    flex: 1 0 auto; /* grow to push footer down */
 }
 
 /* === Top Bar === */
 .top-bar {
     background-color: var(--pdpink);
     color: white;
-    padding: 0.75rem 0;
-    display: flex;
-    align-items: center;
+    padding: 0.75rem 0rem;
     overflow: hidden;
-    border-bottom: 0.25rem solid #ff6f98;
+    text-align: center;
+    border-bottom: .25rem solid #ff6f98;
 }
 
 .scroll-container {
@@ -71,63 +73,24 @@ main {
 
 .scroll-track {
     display: flex;
-    align-items: center;
     width: max-content;
     animation: scroll 45s linear infinite;
 }
 
 .scroll-track span {
     white-space: nowrap;
-    font-family: "Arial Rounded", Arial, sans-serif;
+    font-family: "Arial Rounded Bold", Arial, sans-serif;
     font-size: 1.5rem;
-    font-weight: bold;
 }
 
+/* Seamless loop */
 @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-
-/* === Navigation Bar === */
-.navbar {
-    position: sticky;
-    top: 0;
-    background: #F2F2F3;
-    backdrop-filter: blur(8px);
-    z-index: 1000;
-}
-
-.nav-inner {
-  position: relative;       /* for absolute links */
-  display: flex;
-  align-items: center;      /* vertical center logo */
-  height: 3.5rem;
-  padding: 0.5rem 2rem;
-}
-
-.nav-logo img {
-  height: 2.25rem;
-  width: auto;
-
-}
-
-.nav-links {
-  display: flex;
-  font-family: "Arial Rounded", Arial, sans-serif;
-  gap: 3rem;
-  position: absolute;
-  left: 50%;
-  top: 50%;                 /* vertically center links */
-  transform: translate(-50%, -50%); /* horizontally + vertically center */
-}
-
-.nav-links a {
-  text-decoration: none;
-  font-family: "Arial Rounded", Arial, sans-serif;;
-  font-size: 1.25rem;
-  letter-spacing: 1px;
-  color: var(--fg);
-  position: relative;
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 /* === Hero Section === */
@@ -145,54 +108,67 @@ main.hero {
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;  /* center horizontally */
     justify-content: center;
 }
 
 .hero-logo {
-    max-width: 100%;
-    max-height: 400px;
+    max-width: 100%;        /* never overflow container */
+    max-height: 400px;      /* sets desired height */
+    width: auto;            /* maintain aspect ratio */
+    height: auto;           /* maintain aspect ratio */
     margin-bottom: 5rem;
 }
 
-/* === Button === */
+/* Minimal button style */
 .hero-button {
     display: inline-flex;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.5rem;  /* vertical + horizontal padding */
     font-family: "Arial Rounded", Arial, sans-serif;
     font-size: 3.5rem;
     color: #ffffff;
     background-color: var(--pdpink);
     border: none;
     border-radius: 25px;
-    text-decoration: none;
+    text-decoration: none;      /* remove underline from <a> */
     transition: background-color 0.3s ease;
 }
 
 .hero-button:hover {
-    background-color: var(--circuit-green);
+    background-color: #0ec055;  /* slightly darker on hover */
 }
 
+/* Icon sizing */
 .button-icon {
-    height: 1em;
+    height: 1em;     /* scales with text */
     width: auto;
+    display: block;
+    flex-shrink: 0;
     padding-right: 1rem;
+
     position: relative;
-    top: 4px;
+    top: 4px
 }
 
-/* === Footer === */
 .site-footer {
     position: relative;
     text-align: center;
+    background-color: #272727;
     color: var(--muted);
-    background-color: var(--fg);
     padding: 1rem 2rem;
     font-size: 1rem;
     border-top: 0.25rem solid #555555;
 }
 
+/* Center the text perfectly */
+.footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* Logo locked to the right */
 .footer-logo {
     position: absolute;
     right: 2rem;
@@ -202,7 +178,7 @@ main.hero {
     opacity: 0.75;
 }
 
-/* === Accessibility === */
+    /* Accessibility: hide text visually but keep it readable by screen readers */
 .visually-hidden {
     position: absolute !important;
     width: 1px;
@@ -210,19 +186,36 @@ main.hero {
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* prevent line breaks */
     border: 0;
 }
 
-/* === Responsive === */
+/* === Mobile / small screen tweaks === */
 @media (max-width: 800px) {
-    .hero-content { padding: 1rem; }
-    .hero h1 { font-size: 2rem; }
-    .hero .tagline { font-size: 1rem; }
-    .hero-button { font-size: 1.5rem; padding: 0.5rem 1rem; border-radius: 10px; }
-    .button-icon { top: 2px; padding-right: 0.5rem; }
-    .nav-logo {
-        display: none;
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .tagline {
+        font-size: 1rem;
+    }
+
+    /* Scale down the hero button */
+    .hero-button {
+        font-size: 1.5rem;      /* smaller text */
+        padding: 0.5rem 1rem;   /* smaller padding */
+        border-radius: 10px;    /* slightly smaller rounding */
+    }
+
+    /* Optional: scale icon proportionally */
+    .button-icon {
+        height: 1em; /* scales with new button font-size */
+        padding-right: 0.5rem;
+        top: 2px;    /* adjust vertical alignment */
     }
 }
