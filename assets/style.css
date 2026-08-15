@@ -136,7 +136,7 @@ main.hero {
     font-family: "JMH Typewriter dry", Helvetica, sans-serif;
     font-size: 3rem;
     color: #ffffff;
-    background-color: var(--fg);
+    background-color: var(--bloodred);
     border: none;
     border-radius: 20px;
     text-decoration: none;      /* remove underline from <a> */
@@ -144,7 +144,7 @@ main.hero {
 }
 
 .hero-button:hover {
-    background-color: var(--bloodred);  /* slightly darker on hover */
+    background-color: var(--fg);  /* slightly darker on hover */
 }
 
 /* Icon sizing */
@@ -156,7 +156,7 @@ main.hero {
     padding-right: 1rem;
 
     position: relative;
-    top: 4px
+    top: 4px;
 }
 
 .site-footer {
