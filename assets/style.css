@@ -129,6 +129,10 @@ main.hero {
     margin-bottom: 2rem;
 }
 
+.hero-logo-mobile {
+    max-height: 0px;      /* sets desired height */
+}
+
 /* Minimal button style */
 .hero-button {
     display: inline-flex;
@@ -200,13 +204,26 @@ main.hero {
     border: 0;
 }
 
+@media (max-width: 1280px) {
+        .hero-logo-mobile {
+        max-width: 90%;        /* never overflow container */
+        max-height: 500px;      /* sets desired height */
+        width: auto;            /* maintain aspect ratio */
+        height: auto;           /* maintain aspect ratio */
+        margin-bottom: 2rem;
+    }
+
+    .hero-logo {
+        max-height: 0px;      /* sets desired height */
+    }
+}
+
 /* === Mobile / small screen tweaks === */
 @media (max-width: 800px) {
     .hero-content {
         padding: 1rem;
     }
-
-    .hero h1 {
+        .hero h1 {
         font-size: 2rem;
     }
 
