@@ -1,7 +1,7 @@
 
 /* Cooper Black for Logo / H1 */
 @font-face {
-    font-family: "Cooper Black";
+    font-family: "Cooper";
     src: url("../assets/fonts/CooperBlack.woff") format("woff");
     font-weight: Black;
     font-style: normal;
@@ -17,19 +17,29 @@
 
 /* Arial Rounded for everything else */
 @font-face {
-    font-family: "Arial Rounded Bold";
+    font-family: "Arial Rounded";
     src: url("../assets/fonts/ArialRoundedBold.woff") format("woff");
     font-weight: bold;
     font-style: normal;
 }
 
+/* Arial Rounded for everything else */
+@font-face {
+    font-family: "JMH Typewriter dry";
+    src: url("../assets/fonts/heavymetal/JMH\ Typewriter\ dry.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* === Global Styles === */
 :root {
-    --bg: #ffffff;
+    --bg: #000000;
     --fg: #0f0f10;
+    --border: #5f0010;
     --muted: #9a9a9a;
 
     --pdpink: #EE3C6F;
+    --bloodred: #af0f2f;
 }
 
 * {
@@ -46,7 +56,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: "Arial Rounded", Arial, sans-serif;
+    font-family: "JMH Typewriter dry", Helvetica, sans-serif;
     background: var(--bg);
     color: var(--fg);
 }
@@ -58,12 +68,11 @@ main {
 
 /* === Top Bar === */
 .top-bar {
-    background-color: var(--pdpink);
+    background-color: var(--bloodred);
     color: white;
-    padding: 0.75rem 0rem;
+    padding: 0.7rem 0rem;
     overflow: hidden;
     text-align: center;
-    border-bottom: .25rem solid #ff6f98;
 }
 
 .scroll-container {
@@ -79,7 +88,7 @@ main {
 
 .scroll-track span {
     white-space: nowrap;
-    font-family: "Arial Rounded Bold", Arial, sans-serif;
+    font-family: "JMH Typewriter dry", Helvetica, sans-serif;
     font-size: 1.5rem;
 }
 
@@ -104,7 +113,7 @@ main.hero {
 }
 
 .hero-content {
-    max-width: 1280px;
+    max-width: 1920px;
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
@@ -113,29 +122,33 @@ main.hero {
 }
 
 .hero-logo {
-    max-width: 100%;        /* never overflow container */
-    max-height: 400px;      /* sets desired height */
+    max-width: 80%;        /* never overflow container */
+    max-height: 500px;      /* sets desired height */
     width: auto;            /* maintain aspect ratio */
     height: auto;           /* maintain aspect ratio */
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-logo-mobile {
+    max-height: 0px;      /* sets desired height */
 }
 
 /* Minimal button style */
 .hero-button {
     display: inline-flex;
     padding: 0.75rem 1.5rem;  /* vertical + horizontal padding */
-    font-family: "Arial Rounded", Arial, sans-serif;
-    font-size: 3.5rem;
+    font-family: "JMH Typewriter dry", Helvetica, sans-serif;
+    font-size: 3rem;
     color: #ffffff;
-    background-color: var(--pdpink);
+    background-color: var(--bloodred);
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     text-decoration: none;      /* remove underline from <a> */
     transition: background-color 0.3s ease;
 }
 
 .hero-button:hover {
-    background-color: #0ec055;  /* slightly darker on hover */
+    background-color: var(--fg);  /* slightly darker on hover */
 }
 
 /* Icon sizing */
@@ -147,17 +160,17 @@ main.hero {
     padding-right: 1rem;
 
     position: relative;
-    top: 4px
+    top: 4px;
 }
 
 .site-footer {
     position: relative;
     text-align: center;
-    background-color: #272727;
+    background-color: var(--fg);
     color: var(--muted);
     padding: 1rem 2rem;
     font-size: 1rem;
-    border-top: 0.25rem solid #555555;
+    border-top: 0.25rem solid var(#151515);
 }
 
 /* Center the text perfectly */
@@ -191,13 +204,26 @@ main.hero {
     border: 0;
 }
 
+@media (max-width: 1280px) {
+        .hero-logo-mobile {
+        max-width: 90%;        /* never overflow container */
+        max-height: 500px;      /* sets desired height */
+        width: auto;            /* maintain aspect ratio */
+        height: auto;           /* maintain aspect ratio */
+        margin-bottom: 2rem;
+    }
+
+    .hero-logo {
+        max-height: 0px;      /* sets desired height */
+    }
+}
+
 /* === Mobile / small screen tweaks === */
 @media (max-width: 800px) {
     .hero-content {
         padding: 1rem;
     }
-
-    .hero h1 {
+        .hero h1 {
         font-size: 2rem;
     }
 
